@@ -1,6 +1,8 @@
 # ps-project
 Demo project: This project is intended to be a tutorial, with solution.py altered until it passes all the tests. Running the tests is covered below. 
 
+This has been tested on Linux and Mac using python version 3.6, not on Windows for any version of python.
+
 ## Introduction
 
 In 2018 the Zimbabwe Electoral Commission released the full voters roll for the historic July harmonised elections, for the first time in 38 years the recently deposed dictator Robert Gabriel Mugabe would not appear on ballot, replaced by his former ally Emmerson Mnangagwa. Elections in Zimbabwe are steeped in a history of fraud, rigging and violence.
