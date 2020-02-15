@@ -19,7 +19,7 @@ A Zimbabwe National Identification number consists of 11 alpha numeric character
 
 The first 2 digits represent the province where the ID was issued, the next 6 are unique identity digits. The first of the trailing 3 characters is always a capitol letter checkdigit, calculated from the previous 8 digits but not from the last 2 digits which loosely encode the ethnicity of the ID holder.
 
-The checkdigit helps detect simple errors in the ID when humans manually input, transcribe or capture the ID. Such as hearing 17 in place of 70, switching 2 digits(9181 instead of 9981) or reading badly written characters incorrectly. for example
+The checkdigit helps detect simple errors in the ID when humans manually input, transcribe or capture the ID. Such as hearing 17 in place of 70, switching 2 digits(9181 instead of 9981) or reading badly written characters incorrectly. For example,
 
 | Description of variation | Example ID string |
 | --- | --- |
@@ -50,20 +50,20 @@ This project can be completed using the standard libraries and only requires a d
 - The data can be read with the [csv library](https://docs.python.org/3/library/csv.html)
 
 ```example_solution.py``` is a completed example solution (try not to peak until you've passed all the tests!).
-Your solution will be completed in ```solution.py```, you can open that now in your favorite text editor, currently it only contains a header and main method. **solution.py is the only file you will have to edit to complete all the tasks**
+Your solution will be completed in ```solution.py```, you can open that now in your favorite text editor, currently it only contains a header and main method. **solution.py is the only file you will have to edit to complete all the tasks.**
 
 within the data directory are 2 files:
 - ```mangled_voters_roll_hre.csv``` : The complete fake dataset with 10 planted invalid ID numbers 
 - ```truncated_mangled_voters_roll_hre.csv``` : The first 10 entries of the complete dataset
 
-Until the final task, use the truncated voters roll, it will be easier to debug and run faster.
+**Until the final task, use the truncated voters roll**, it will be easier to debug and run faster.
 The third entry (59-772671-B59,RUTH,MUCHENGETE) of both files has an ID number with an error. The correct checkdigit would be T.
 
 ```test_solution.py``` contains unit tests for each task in this project. The tests can be run on debian based systems by opening a terminal in the root directory of the project and executing the following command:
 ```
 python3 -m unittest -vf
 ```
-Do this after making any changes to solution.py (Save your changes first!)
+**Do this after making any changes to solution.py (Save your changes first!)**
 You can go ahead and run it now, it will produce the following output:
 ```
 $ python3 -m unittest -vf 
@@ -116,7 +116,7 @@ It's good style to place all import statements at the top of your code, before a
 If you've passed Task 1 then it's time to move on to the seccond task
 
 ### Task 2: Printing only the ID number.
-The ```reader``` in the main function is an (iterator)[https://wiki.python.org/moin/Iterator], with each 'next' returning a list, which is made up of the next row in the file. So, in the first iteration of the 'for loop', ```row``` is the list:
+The ```reader``` in the main function is an [iterator](https://wiki.python.org/moin/Iterator), with each 'next' returning a list, which is made up of the next row in the file. So, in the first iteration of the 'for loop', ```row``` is the list:
 
 ```['70-991814-P70', 'ALICE', 'ZULU'].``` 
 
@@ -133,7 +133,7 @@ and return the checkdigit:
 
 ```P``` 
 
-as a single character. Note that in all the ID's in the folder, the checkdigit is third to last. Remember strings can be indexed from the end. Remember to (define your argument and your return value)[https://www.learnpython.org/en/Functions].
+as a single character. Note that in all the ID's in the folder, the checkdigit is third to last. Remember strings can be indexed from the end. Remember to [define your argument and your return value](https://www.learnpython.org/en/Functions).
 
 
 ### Task 4: Extracting the relevant numbers from an ID.
@@ -146,7 +146,7 @@ and return the first 8 digits as an integer:
 
 ```70991814```
 
-Notice that the ID's all have the form 2 digits, dash, 6-7 digits. So we can (_break_)[https://docs.python.org/3/library/stdtypes.html#str.split] the ID string into parts and concatenate the resulting sub strings. Be careful to concatenate strings before casting the digits to an integer.
+Notice that the ID's all have the form 2 digits, dash, 6-7 digits. So we can [break](https://docs.python.org/3/library/stdtypes.html#str.split) the ID string into parts and concatenate the resulting sub strings. Be careful to concatenate strings before casting the digits to an integer.
 
 ### Task 5: Calculating the checkdigit from an ID. 
 
@@ -158,9 +158,9 @@ and return the calculated checkdigit:
 
 ```P```
 
-We can use the function ```get_id_digits``` to extract the digits and then use the (remainder opperator)[https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex] (```%```) to calculate the checkdigit numerical value. 
+We can use the function ```get_id_digits``` to extract the digits and then use the [remainder opperator](https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex) (```%```) to calculate the checkdigit numerical value. 
 
-A checkdigit letter can be determined from the above numerical value by (indexing)[https://docs.python.org/3/library/stdtypes.html#common-sequence-operations]: 
+A checkdigit letter can be determined from the above numerical value by [indexing](https://docs.python.org/3/library/stdtypes.html#common-sequence-operations): 
 
 ```"ABCDEFGHJKLMNPQRSTVWXYZ"```
 
