@@ -168,7 +168,7 @@ A checkdigit letter can be determined from the above numerical value by [indexin
 
 Which is the uppercase Latin alphabet with the characters O, I and U removed. This will substitute the numerical value of the checkdigit for the corresponding letter. 
 
-### Task 6: Check the validity of an ID
+### Task 6: Check the validity of an ID.
 
 Using the functions that we've written, we can now write a function called ```check_id_valid``` which will accept an ID number string in the format 
 
