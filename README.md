@@ -43,4 +43,24 @@ For example, the ID number 70-991814-P70 has the relevant digits 70991814 (P is 
 ```
 and P is the 14th character of the Latin alphabet after O, U and I have been removed.
  
+## How to Proceed
+
+This project can be completed using the standard libraries and only requires a default install of python version 3:
+- Unit tests were written for the [unittest framework](https://docs.python.org/3/library/unittest.html)
+- The data can be read with the [csv library](https://docs.python.org/3/library/csv.html)
+
+An example solution is available in example_solution.py(Try not to peak until you've passed all the tests!)
+Your solution will be completed in the provided solution.py, you can open that now in your favorite text editor, currently it only contains a docstring and main method. **solution.py is the only file you will have to edit to complete all the tasks**
+
+within the data directory are 2 files:
+- mangled_voters_roll_hre.csv : The complete fake dataset with 10 planted incorrect ID numbers 
+- truncated_mangled_voters_roll_hre.csv : The first 10 entries of the complete dataset
+
+Until the final task, use the truncated voters roll, it will be easier to debug and faster to run.
+The third entry (59-772671-B59,RUTH,MUCHENGETE) of both files has an ID number with an error. The correct checkdigit would be T.
+
+Each task in this project has a unit test in test_solution.py, **you do not need to open or edit this file to complete the project**. The tests can be run on debian based systems by executing the following command in the root directory of the project:
+```
+python3 -m unittest -vf
+```
 
