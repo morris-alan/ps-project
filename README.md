@@ -1,17 +1,17 @@
 # ps-project
 Demo project 
 
-##Introduction
+## Introduction
 
 In 2018 the Zimbabwe Electoral Commission released the full voters roll for the historic July harmonised elections, for the first time in 38 years the recently deposed dictator Robert Gabriel Mugabe would not appear on ballot, replaced by his former ally Emmerson Mnangagwa. Elections in Zimbabwe are steeped in a history of fraud, rigging and violence.
 
-The original voters roll was, for a time, downloadable from this website (https://zimelection.com/votersroll.php), as a disjointed collection of Microsoft excel(xlsx) documents. They contained detailed personal information on registered voters including names, phone numbers, addresses and National Identification numbers.
+The original voters roll was, for a time, downloadable from this [website](https://zimelection.com/votersroll.php), as a disjointed collection of Microsoft excel(xlsx) documents. They contained detailed personal information on registered voters including names, phone numbers, addresses and National Identification numbers.
 
 Today we will be searching a subsection of an altered version of the original voters roll(Harare Metropolitan area) for invalid or incorrectly captured national ID numbers. Within the provided data names have been mixed and the ID numbers are all fake, in addition there are only 3 columns - ID number, first names, surname. 
 
 The goal of this exercise is to search the 900301 rows of fake registered voters and find the 10 planted invalid ID numbers.
 
-##About the national ID number
+## About the national ID number
 
 A Zimbabwe National Identification number consists of 11 alpha numeric characters:
 
