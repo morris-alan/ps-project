@@ -49,18 +49,79 @@ This project can be completed using the standard libraries and only requires a d
 - Unit tests were written for the [unittest framework](https://docs.python.org/3/library/unittest.html)
 - The data can be read with the [csv library](https://docs.python.org/3/library/csv.html)
 
-An example solution is available in example_solution.py(Try not to peak until you've passed all the tests!)
-Your solution will be completed in the provided solution.py, you can open that now in your favorite text editor, currently it only contains a docstring and main method. **solution.py is the only file you will have to edit to complete all the tasks**
+```example_solution.py``` is a completed example solution (try not to peak until you've passed all the tests!).
+Your solution will be completed in ```solution.py```, you can open that now in your favorite text editor, currently it only contains a header and main method. **solution.py is the only file you will have to edit to complete all the tasks**
 
 within the data directory are 2 files:
-- mangled_voters_roll_hre.csv : The complete fake dataset with 10 planted incorrect ID numbers 
-- truncated_mangled_voters_roll_hre.csv : The first 10 entries of the complete dataset
+- ```mangled_voters_roll_hre.csv``` : The complete fake dataset with 10 planted invalid ID numbers 
+- ```truncated_mangled_voters_roll_hre.csv``` : The first 10 entries of the complete dataset
 
-Until the final task, use the truncated voters roll, it will be easier to debug and faster to run.
+Until the final task, use the truncated voters roll, it will be easier to debug and run faster.
 The third entry (59-772671-B59,RUTH,MUCHENGETE) of both files has an ID number with an error. The correct checkdigit would be T.
 
-Each task in this project has a unit test in test_solution.py, **you do not need to open or edit this file to complete the project**. The tests can be run on debian based systems by executing the following command in the root directory of the project:
+```test_solution.py``` contains unit tests for each task in this project. The tests can be run on debian based systems by opening a terminal in the root directory of the project and executing the following command:
 ```
 python3 -m unittest -vf
 ```
+Do this after making any changes to solution.py (Save your changes first!)
+You can go ahead and run it now, it will produce the following output:
+```
+$ python3 -m unittest -vf 
+++++++++++++++++++++++++++++++++++++++++++++++++++
+You're program produced the following output:
+Hello, world.
+++++++++++++++++++++++++++++++++++++++++++++++++++
+test_task_1 (test_solution.TestIDValidationMethods) ... FAIL
+
+======================================================================
+FAIL: test_task_1 (test_solution.TestIDValidationMethods)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "~/test_solution.py", line 37, in test_task_1
+    self.assertNotRegex(self.captured_text,"Hello, world.", "\n\nDon't forget to delete the line: \nprint(\"Hello, world\")")
+AssertionError: Regex matched: 'Hello, world.' matches 'Hello, world.' in 'Hello, world.' : 
+
+Don't forget to delete the line: 
+print("Hello, world")
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)
+```
+The first section shows the output of running solution.py, in this case printing ```Hello, world.```
+Below this is a summary of the tasks that you have passed thus far. Right now you haven't passed any, but we'll fix that in a moment. 
+
+Finally, the output shows the most recently failed test and possibly information on how to pass the test given what is currently in your solution.py file.
+
+## Tasks
+### Task 1: Reading a csv file.
+For the first task we will use the csv [library](https://docs.python.org/3/library/csv.html) to read in the CSV file (truncated_mangled_voters_roll_hre.csv).
+
+We can copy and alter the example code found in the library [documentation](https://docs.python.org/3/library/csv.html#examples).
+
+In the main() function of solution.py, manually remove ```print("hello, world.")``` and add the code from the example, replacing ```'some.csv'``` with the path to the truncated data file (for Mac or Linux: ```"data/truncated_mangled_voters_roll_hre.csv"``` If you are using Windows change '/' to '\').
+
+Run the tests whenever you want to verify if a change that you've made brings you closer to passing the task, some of the error messages may be helpful!
+
+If you get a syntax error check your indentation, punctuation, and spelling and don't forget to save solution.py every time before you run the tests!
+
+When you have passed task 1 the feedback should start something like this:
+```
+test_task_1 (test_solution.TestIDValidationMethods) ... ok
+test_task_2 (test_solution.TestIDValidationMethods) ... FAIL
+```
+It's good style to place all import statements at the top of your code, before any methods and after the header.
+
+If you've passed Task 1 then it's time to move on to the seccond task
+
+### Task 2: Printing only the ID number.
+The ```reader``` in the main function is an (iterator)[https://wiki.python.org/moin/Iterator], with each 'next' returning a list, which is made up of the next row in the file. So, in the first iteration of the 'for loop', ```row``` is the list:
+```['70-991814-P70', 'ALICE', 'ZULU'].``` 
+In subsequent iterations, the variable ```row``` will represent the subsequent line in the data file. 
+
+We can alter the current program to print only the ID numbers by selecting the first item of each list in the print statement. The syntax for selecting the n'th item of a list in python is variable_name[n]. What is our variable name? For 'n', remember python lists are indexed from 0.
+
+### Task 3: Extracting the checkdigit from an ID.
+We now need to create a function called ```get_id_checkdigit``` which will accept an ID number in the format 70-991814-P70 and return the checkdigit (P) as a single character. Note that in all the ID's in the folder, the checkdigit is third to last. Remember strings can be indexed from the end. Remember to define your parameter, and your return value.
 
