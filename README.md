@@ -21,9 +21,15 @@ The first 2 digits represent the province where the ID was issued, the next 6 ar
 
 The checkdigit helps detect simple errors in the ID when humans manually input, transcribe or capture the ID. Such as hearing 17 in place of 70, switching 2 digits(9181 instead of 9981) or reading badly written characters incorrectly. for example
 
-Original ID with correct check digit(P)                                              : 70-991814-P70 
-2 Digits have been swapped(91-19), calculated checkdigit is D                        : 70-919814-P70
-70 changed to 17, calculated checkdigit is T                                         : 17-991814-P70
-5th digit altered to 7 from 1(common handwriting error) calculated checkdigit is L   : 70-997814-P70
+| Original ID with correct check digit(P)                                              | 70-991814-P70 |
+| 2 Digits have been swapped(91-19), calculated checkdigit is D                        | 70-919814-P70 |
+| 70 changed to 17, calculated checkdigit is T                                         | 17-991814-P70 |
+| 5th digit altered to 7 from 1(common handwriting error) calculated checkdigit is L   | 70-997814-P70 |
 
-The checkdigit is derived from the modulo 23 of the first 8 digits. Each of the possible 23 results is represented by the corresponding capitol letter of the Latin alphabet with the following ambiguous characters removed: O, U and I (O can be mistaken for 0, U for V and I for both lowercase L and 1).
+The checkdigit is derived from taking the remainder of 23 from the preceeding digits. Each of the possible 23 results is represented by the corresponding capitol letter of the Latin alphabet with the character O,U and I removed for the following reasons:
+
+| Letter | Confused for |
+| --- | --- |
+| O | number 0 |
+| U | The letter V |
+| I | Lowercase L or the number 1 |
