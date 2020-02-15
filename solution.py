@@ -4,7 +4,6 @@
   Python-Version: 3.6
   About : example solution for pluralsight interview project: Finding invalid fake ID numbers.
 """
-import csv
 
 def main():
     print("Hello, world.")
