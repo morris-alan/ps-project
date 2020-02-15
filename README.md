@@ -1,5 +1,5 @@
 # ps-project
-Demo project 
+Demo project: This project is intended to be a tutorial, with solution.py altered until it passes all the tests. Running the tests is covered below. 
 
 ## Introduction
 
@@ -117,11 +117,67 @@ If you've passed Task 1 then it's time to move on to the seccond task
 
 ### Task 2: Printing only the ID number.
 The ```reader``` in the main function is an (iterator)[https://wiki.python.org/moin/Iterator], with each 'next' returning a list, which is made up of the next row in the file. So, in the first iteration of the 'for loop', ```row``` is the list:
+
 ```['70-991814-P70', 'ALICE', 'ZULU'].``` 
+
 In subsequent iterations, the variable ```row``` will represent the subsequent line in the data file. 
 
-We can alter the current program to print only the ID numbers by selecting the first item of each list in the print statement. The syntax for selecting the n'th item of a list in python is variable_name[n]. What is our variable name? For 'n', remember python lists are indexed from 0.
+We can alter the current program to print only the ID numbers by selecting the first item of each list in the print statement. The syntax for selecting the n'th item of a list in python is ```variable_name[n]```. What is our variable name? For 'n', remember python lists are indexed from 0.
 
 ### Task 3: Extracting the checkdigit from an ID.
-We now need to create a function called ```get_id_checkdigit``` which will accept an ID number in the format 70-991814-P70 and return the checkdigit (P) as a single character. Note that in all the ID's in the folder, the checkdigit is third to last. Remember strings can be indexed from the end. Remember to define your parameter, and your return value.
+We now need to create a function called ```get_id_checkdigit``` which will accept an ID number as a string in the format 
 
+```"70-991814-P70"``` 
+
+and return the checkdigit:
+
+```P``` 
+
+as a single character. Note that in all the ID's in the folder, the checkdigit is third to last. Remember strings can be indexed from the end. Remember to (define your argument and your return value)[https://www.learnpython.org/en/Functions].
+
+
+### Task 4: Extracting the relevant numbers from an ID.
+
+To help us with the next function, we'll write a function called ```get_id_digits``` which will accept an ID number as a string in the format 
+
+```"70-991814-P70"```
+
+and return the first 8 digits as an integer:
+
+```70991814```
+
+Notice that the ID's all have the form 2 digits, dash, 6-7 digits. So we can (_break_)[https://docs.python.org/3/library/stdtypes.html#str.split] the ID string into parts and concatenate the resulting sub strings. Be careful to concatenate strings before casting the digits to an integer.
+
+### Task 5: Calculating the checkdigit from an ID. 
+
+Now we'll write a function called ```calculate_id_checkdigit``` which will accept an ID number string in the format 
+
+```"70-991814-P70"```
+
+and return the calculated checkdigit:
+
+```P```
+
+We can use the function ```get_id_digits``` to extract the digits and then use the (remainder opperator)[https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex] (```%```) to calculate the checkdigit numerical value. 
+
+A checkdigit letter can be determined from the above numerical value by (indexing)[https://docs.python.org/3/library/stdtypes.html#common-sequence-operations]: 
+
+```"ABCDEFGHJKLMNPQRSTVWXYZ"```
+
+Which is the uppercase Latin alphabet with the characters O, I and U removed. This will substitute the numerical value of the checkdigit for the corresponding letter. 
+
+### Task 6: Check the validity of an ID
+
+Using the functions that we've written, we can now write a function called ```check_id_valid``` which will accept an ID number string in the format 
+
+```"70-991814-P70"```
+
+and return ```True``` if the calculated checkdigit matches the extracted checkdigit and ```False``` if they don't match.
+
+### Task 7: Print out invalid ID numbers.
+Now we can find the ID numbers that are invalid in the truncated dataset! 
+
+To do this we will alter the ```for loop``` in the ```main``` function to only print out the **ID number** if the function ```check_id_valid``` returns ```False```.
+
+### Task 8: Tackling the full dataset.
+Now that we can detect invalid ID numbers, we can search the complete dataset to find all 10 invalid ID numbers. To do this, we will change the **filename** in the ```open``` function from ```"truncated_mangled_voters_roll_hre.csv"``` to ```"mangled_voters_roll_hre.csv"```. Be aware that there are 900301 lines in the complete dataset and the program may take a while to finish executing.
