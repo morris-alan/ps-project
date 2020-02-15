@@ -21,6 +21,8 @@ The first 2 digits represent the province where the ID was issued, the next 6 ar
 
 The checkdigit helps detect simple errors in the ID when humans manually input, transcribe or capture the ID. Such as hearing 17 in place of 70, switching 2 digits(9181 instead of 9981) or reading badly written characters incorrectly. for example
 
+| Description of error | Altered ID |
+| --- | --- |
 | Original ID with correct check digit(P)                                              | 70-991814-P70 |
 | 2 Digits have been swapped(91-19), calculated checkdigit is D                        | 70-919814-P70 |
 | 70 changed to 17, calculated checkdigit is T                                         | 17-991814-P70 |
