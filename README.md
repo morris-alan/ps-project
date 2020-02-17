@@ -15,7 +15,7 @@ The goal of this exercise is to search the 900301 rows of fake registered voters
 
 ## About the national ID number
 
-A Zimbabwe National Identification number consists of 11 alpha numeric characters and is represented in the data as the following string of characters:
+A Zimbabwe National Identification number consists of 11 or 12 alpha numeric characters and is represented in the data as the following string of characters:
 
 70-991814-P70
 
@@ -52,7 +52,7 @@ This project can be completed using the standard libraries and only requires a d
 - The data can be read with the [csv library](https://docs.python.org/3/library/csv.html)
 
 ```example_solution.py``` is a completed example solution (try not to peak until you've passed all the tests!).
-Your solution will be completed in ```solution.py```, you can open that now in your favorite text editor, currently it only contains a header and main method. **solution.py is the only file you will have to edit to complete all the tasks.**
+You will complete this project by editing the file ```solution.py```, you can open that now in your favorite text editor, currently it only contains a header and main method. **solution.py is the only file you will have to edit to complete all the tasks.**
 
 within the data directory are 2 files:
 - ```mangled_voters_roll_hre.csv``` : The complete fake dataset with 10 planted invalid ID numbers 
@@ -98,11 +98,11 @@ Finally, the output shows the most recently failed test and possibly information
 
 ## Tasks
 ### Task 1: Reading a csv file.
-For the first task we will use the csv [library](https://docs.python.org/3/library/csv.html) to read in the CSV file (truncated_mangled_voters_roll_hre.csv).
+For the first task we will use the [csv library](https://docs.python.org/3/library/csv.html) to read in the CSV file (truncated_mangled_voters_roll_hre.csv).
 
-We can copy and alter the example code found in the library [documentation](https://docs.python.org/3/library/csv.html#examples).
+We can copy and alter the example code found in the [library documentation](https://docs.python.org/3/library/csv.html#examples).
 
-In the main() function of solution.py, manually remove ```print("hello, world.")``` and add the code from the example, replacing ```'some.csv'``` with the path to the truncated data file (for Mac or Linux: ```"data/truncated_mangled_voters_roll_hre.csv"``` If you are using Windows change '/' to '\').
+In the main() function of solution.py, remove ```print("hello, world.")``` and add the code from the example, replacing ```'some.csv'``` with the path to the truncated data file (for Mac or Linux: ```"data/truncated_mangled_voters_roll_hre.csv"``` If you are using Windows change '/' to '\\').
 
 Run the tests whenever you want to verify if a change that you've made brings you closer to passing the task, some of the error messages may be helpful!
 
