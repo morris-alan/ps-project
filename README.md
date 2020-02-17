@@ -34,7 +34,7 @@ The checkdigit is calculated by taking the remainder of the first 2 sets of digi
 
 | Letter | Confused for |
 | --- | --- |
-| O | number 0 |
+| O | Number 0 |
 | U | The letter V |
 | I | Lowercase L or the number 1 |
 
